@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    image: owasp/modsecurity-crs:nginx
+    ports:
+      - "8080:8080"
+    environment:
+      - BACKEND=http://juice-shop:3000
+      - MODSECURITY_RULE_ENGINE=on
+    depends_on:
+      - juice-shop
+  juice-shop:
+    image: bkimminich/juice-shop
+    expose:
+      - "3000"
