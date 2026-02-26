@@ -1,6 +1,6 @@
 # WAF Intelligence Lab 🛡️
 
-A comprehensive environment for testing, replaying, and auditing ModSecurity WAF rules against vulnerable applications.
+    A comprehensive environment for testing, replaying, and auditing ModSecurity WAF rules against vulnerable applications.
 
 ## Overview
 This laboratory environment enables security engineers to:
@@ -9,16 +9,14 @@ This laboratory environment enables security engineers to:
 3.  **Automate** common attack vectors (SQLi, XSS, Path Traversal, Command Injection).
 4.  **Analyze** WAF hits through structured log parsing and automated report generation.
 
----
 
-## 🏗️ Architecture
+## Architecture
 - **Web Application Firewall**: Nginx with `owasp/modsecurity-crs`
 - **Vulnerable Target**: `bkimminich/juice-shop`
 - **Automation Engine**: PowerShell-based Replay & Reporting tool
 
----
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - [Docker & Docker Compose](https://docs.docker.com/get-docker/)
@@ -37,26 +35,23 @@ Execute the automation script to simulate attacks and generate a security report
 .\replay_and_report.ps1
 ```
 
----
 
-## 📂 Project Structure
+## Project Structure
 - `docker-compose.yml`: Defines the WAF and Juice Shop services.
 - `nginx.conf`: Nginx configuration for the reverse proxy.
 - `modsec.conf`: Custom ModSecurity configurations (log formats, engine status).
 - `replay_and_report.ps1`: PowerShell script that replays attacks and parses JSON logs into Markdown.
 - `attack_report.md`: (Generated) A structured analysis of blocked/detected threats.
 
----
 
-## 📊 Sample Attacks Covered
+## Sample Attacks Covered
 - **SQL Injection**: Searching for products using tautologies (`' OR 1=1--`).
 - **Cross-Site Scripting (XSS)**: Injecting `<script>` tags into search queries.
 - **Path Traversal**: Attempting to access sensitive system files like `/etc/passwd`.
 - **Command Injection**: Appending OS commands to application parameters.
 
----
 
-## 📜 Reporting
+## Reporting
 The audit script extracts the following data from ModSecurity logs:
 - **Status Code**: The HTTP response (e.g., `403 Forbidden`).
 - **URI**: The targeted endpoint.
@@ -64,7 +59,6 @@ The audit script extracts the following data from ModSecurity logs:
 - **Message**: Description of the detected threat.
 - **Matched Data**: The specific payload fragment that triggered the WAF.
 
----
 
 ## License
 MIT
