@@ -1,6 +1,6 @@
 # WAF Intelligence Lab 🛡️
 
-    A comprehensive environment for testing, replaying, and auditing ModSecurity WAF rules against vulnerable applications.
+A comprehensive environment for testing, replaying, and auditing ModSecurity WAF rules against vulnerable applications.
 
 ## Overview
 This laboratory environment enables security engineers to:
